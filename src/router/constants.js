@@ -16,7 +16,14 @@ export const routes = [
   {
     name: 'manage',
     path: '/manage-music',
+    // alias: "/manage",
     component: ManageView,
+    beforeEnter: (to, from, next) => {
+      next()
+    },
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: '/manage',
